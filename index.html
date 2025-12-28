@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZRF</title>
+  <title>50j</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +13,6 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* خلفية ازرق + اسود */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -33,7 +32,6 @@
       margin-top: 60px;
       padding: 30px;
       border-radius: 14px;
-      /* خفيف ظل لتحديد الصندوق عن الخلفية */
       box-shadow: 0 6px 18px rgba(0,0,0,0.6);
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       backdrop-filter: blur(4px);
@@ -57,46 +55,28 @@
       transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
       width: 260px;
       box-shadow: 0 6px 12px rgba(2,6,23,0.6);
-      -webkit-user-select: none;
-      user-select: none;
     }
 
     .btn:active { transform: translateY(1px); }
 
-    /* دلتا: خلفية اسود مع حد ازرق فاتح */
     .btn-delta {
       background-color: #020617;
       color: #e6f2ff;
       border: 2px solid #0ea5ff;
     }
-    .btn-delta:hover {
-      background-color: rgba(8,18,33,0.9);
-      box-shadow: 0 10px 22px rgba(14,165,255,0.12);
-    }
 
-    /* كرنل: ازرق داكن */
     .btn-krnl {
       background-color: #003459;
       color: #e6f2ff;
       border: 2px solid #001f3f;
     }
-    .btn-krnl:hover {
-      background-color: #004a78;
-      box-shadow: 0 10px 22px rgba(0,74,120,0.12);
-    }
 
-    /* سكيبكس: ازرق سماوي لافت */
     .btn-skipx {
       background-color: #0bb7e6;
       color: #001217;
       border: 2px solid #065f70;
     }
-    .btn-skipx:hover {
-      background-color: #19c9ff;
-      box-shadow: 0 10px 22px rgba(11,183,230,0.12);
-    }
 
-    /* ضمان ان الروابط لا تظهر بشكل غير مرغوب على الموبايل */
     a { outline: none; }
 
     @media (max-width: 420px) {
@@ -106,56 +86,27 @@
     }
   </style>
 </head>
-<body oncontextmenu="return false" oncopy="return false" oncut="return false" onpaste="return false">
+<body oncontextmenu="return false">
 
   <div class="container">
-    <h1>مرحبا بك في موقع ZRF</h1>
+    <h1>مرحبا بك في موقع 50j</h1>
 
     <a class="btn btn-delta"
-       href="itms-services://?action=download-manifest&url=https%3A%2F%2Fdeltaios-executor.com%2FInstall21.plist"
-       oncontextmenu="return false"
-       onmousedown="return false"
-       onselectstart="return false"
-       ondragstart="return false"
-       style="user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;">
+       href="https://deltaexploits.gg/delta-executor-ios">
        دلتا
     </a>
 
     <a class="btn btn-krnl"
-       href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fkrnl-ios.com%2FInstall2.plist"
-       oncontextmenu="return false"
-       onmousedown="return false"
-       onselectstart="return false"
-       ondragstart="return false"
-       style="user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;">
+       href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fkrnl-ios.com%2FInstall2.plist">
        كرنل
     </a>
 
     <a class="btn btn-skipx"
-       href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fskibx.com%2Fota.plist"
-       oncontextmenu="return false"
-       onmousedown="return false"
-       onselectstart="return false"
-       ondragstart="return false"
-       style="user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;">
+       href="https://skibx.com/">
        سكيبكس
     </a>
 
   </div>
-
-  <script>
-    // منع الاختصارات مثل Ctrl+C و Ctrl+U وغيرها
-    document.addEventListener('keydown', function(e) {
-      if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 'x' || e.key === 'a' || e.key === 's' || e.key === 'p')) || e.key === 'F12') {
-        e.preventDefault();
-      }
-    });
-
-    // منع سحب/تحديد العناصر بالماوس (يحافظ على حماية اللمسات)
-    ['selectstart','dragstart','contextmenu'].forEach(function(evt){
-      document.addEventListener(evt, function(e){ e.preventDefault(); });
-    });
-  </script>
 
 </body>
 </html>
