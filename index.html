@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>50j</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AZN Hacks</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -15,9 +18,9 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Cairo', sans-serif;
       background: linear-gradient(180deg, #1e3c72 0%, #2a5298 50%, #6a0dad 100%);
-      color: #ffffff;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -29,84 +32,134 @@
       max-width: 420px;
       width: 100%;
       text-align: center;
-      margin-top: 60px;
+      margin-top: 80px;
       padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      backdrop-filter: blur(4px);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(6px);
     }
 
     h1 {
-      font-size: 28px;
-      margin: 28px 0 30px;
-      color: #e6f2ff;
-      letter-spacing: 0.6px;
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 25px;
     }
 
     .btn {
-      display: block;
-      margin: 16px auto;
-      padding: 16px 34px;
-      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 14px auto;
+      padding: 14px;
+      font-size: 17px;
       border-radius: 12px;
       font-weight: bold;
       text-decoration: none;
-      transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
-      width: 260px;
-      box-shadow: 0 6px 12px rgba(2,6,23,0.6);
+      width: 100%;
+      max-width: 300px;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s;
     }
 
-    .btn:active { transform: translateY(1px); }
+    .btn:hover { transform: scale(1.04); }
 
-    .btn-delta {
-      background-color: #020617;
+    .main-btn {
+      background: #020617;
       color: #e6f2ff;
       border: 2px solid #0ea5ff;
     }
 
-    .btn-skipx {
-      background-color: #0bb7e6;
+    .sub-btn {
+      background: #0bb7e6;
       color: #001217;
       border: 2px solid #065f70;
     }
 
-    a { outline: none; }
+    .icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+    }
+
+    .hidden { display: none; }
 
     footer {
       margin-top: auto;
-      padding: 25px 0 15px;
-      font-size: 14px;
-      color: #d1c4ff;
-      opacity: 0.85;
-    }
-
-    @media (max-width: 420px) {
-      .container { padding: 22px; }
-      .btn { width: 100%; max-width: 340px; }
-      h1 { font-size: 22px; margin-top: 20px; }
+      padding: 20px 0 15px;
+      font-size: 13px;
+      opacity: 0.8;
     }
   </style>
 </head>
-<body oncontextmenu="return false">
+
+<body oncontextmenu="return false" oncopy="return false" oncut="return false" onpaste="return false">
 
   <div class="container">
-    <h1>مرحبا بك في موقع 50j</h1>
 
-    <a class="btn btn-delta"
-       href="https://deltaexploits.gg/delta-executor-ios">
-       دلتا
-    </a>
+    <h1>مرحبا في موقع AZN للهاكات</h1>
+    <div class="subtitle">اختر نوع جهازك</div>
 
-    <a class="btn btn-skipx"
-       href="https://skibx.com/">
-       سكيبكس
-    </a>
+    <!-- أزرار البداية -->
+    <div id="mainMenu">
+      <button class="btn main-btn" onclick="showIOS()">هاكات آيفون</button>
+      <button class="btn main-btn" onclick="showAndroid()">هاكات أندرويد</button>
+    </div>
+
+    <!-- قائمة الآيفون -->
+    <div id="iosMenu" class="hidden">
+      <button class="btn sub-btn" onclick="goLink('https://delta.bz/')">
+        <img class="icon" src="https://delta.bz/Icon.jpg"> دلتا آيفون
+      </button>
+
+      <button class="btn sub-btn" onclick="goLink('https://skibx.com/')">
+        <img class="icon" src="https://skibx.com/icon.png"> سكيبكس آيفون
+      </button>
+
+      <button class="btn main-btn" onclick="backMain()">رجوع</button>
+    </div>
+
+    <!-- قائمة الأندرويد -->
+    <div id="androidMenu" class="hidden">
+      <button class="btn sub-btn" onclick="goLink('https://deltaexploits.gg/delta-executor-android')">
+        <img class="icon" src="https://delta.bz/Icon.jpg"> دلتا أندرويد
+      </button>
+
+      <button class="btn main-btn" onclick="backMain()">رجوع</button>
+    </div>
+
   </div>
 
-  <footer>
-    جميع الحقوق محفوظة © ( 50j.com )
-  </footer>
+  <footer>جميع الحقوق محفوظة © AZN</footer>
+
+<script>
+  function showIOS(){
+    document.getElementById("mainMenu").classList.add("hidden");
+    document.getElementById("iosMenu").classList.remove("hidden");
+  }
+
+  function showAndroid(){
+    document.getElementById("mainMenu").classList.add("hidden");
+    document.getElementById("androidMenu").classList.remove("hidden");
+  }
+
+  function backMain(){
+    document.getElementById("iosMenu").classList.add("hidden");
+    document.getElementById("androidMenu").classList.add("hidden");
+    document.getElementById("mainMenu").classList.remove("hidden");
+  }
+
+  function goLink(url){
+    window.location.href = url;
+  }
+</script>
 
 </body>
 </html>
