@@ -1,0 +1,20 @@
+{
+  "name": "Delta Hub",
+  "short_name": "DeltaHub",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000814",
+  "theme_color": "#0a1a3f",
+  "icons": [
+    {
+      "src": "https://delta.bz/Icon.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://delta.bz/Icon.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
