@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Delta Hub</title>
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0a1a3f">
+<link rel="apple-touch-icon" href="https://delta.bz/Icon.jpg">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
@@ -28,53 +32,53 @@ body{
 }
 
 .container{
-  max-width:420px;
+  max-width:360px;
   width:100%;
-  padding:30px;
+  padding:20px;
 }
 
 .logo{
-  width:110px;
-  height:110px;
-  border-radius:25px;
-  margin-bottom:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  width:85px;
+  height:85px;
+  border-radius:20px;
+  margin-bottom:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
 }
 
 h1{
-  font-size:42px;
+  font-size:32px;
   font-weight:800;
   background:linear-gradient(90deg,#cfd9ff,#ffffff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-bottom:20px;
+  margin-bottom:15px;
 }
 
 .subtitle{
-  font-size:18px;
+  font-size:14px;
   color:#b0b8d1;
-  margin-bottom:50px;
-  line-height:1.6;
+  margin-bottom:35px;
+  line-height:1.5;
 }
 
 .install-btn{
   width:100%;
-  padding:20px;
-  margin:15px 0;
+  padding:16px;
+  margin:10px 0;
   border:none;
-  border-radius:50px;
-  font-size:20px;
+  border-radius:40px;
+  font-size:16px;
   font-weight:600;
   cursor:pointer;
   color:#fff;
-  transition:0.3s;
+  transition:0.25s;
   background:linear-gradient(90deg,#4f8cff,#9c5cff);
-  box-shadow:0 10px 25px rgba(79,140,255,0.4);
+  box-shadow:0 8px 20px rgba(79,140,255,0.35);
 }
 
 .install-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 15px 35px rgba(156,92,255,0.6);
+  transform:scale(1.04);
+  box-shadow:0 12px 28px rgba(156,92,255,0.5);
 }
 </style>
 </head>
@@ -110,6 +114,11 @@ document.addEventListener("keydown",function(e){
  if(e.ctrlKey&&e.shiftKey&&e.key==="I"){e.preventDefault();}
  if(e.ctrlKey&&e.key==="u"){e.preventDefault();}
 });
+
+// تسجيل Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
 </script>
 
 </body>
