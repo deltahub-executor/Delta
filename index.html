@@ -1,94 +1,80 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Delta Hub</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
   user-select:none;
   -webkit-user-select:none;
-  -webkit-touch-callout:none;
-  -webkit-tap-highlight-color:transparent;
 }
 
 body{
-  margin:0;
-  font-family:'Cairo',sans-serif;
-  background:linear-gradient(180deg,#0f172a 0%,#1e3a8a 50%,#6a0dad 100%);
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#0a1a3f 0%,#000814 60%);
   color:#fff;
   display:flex;
   justify-content:center;
   align-items:center;
-  min-height:100vh;
-  padding:20px;
+  height:100vh;
+  text-align:center;
 }
 
 .container{
-  width:100%;
   max-width:420px;
-  text-align:center;
+  width:100%;
   padding:30px;
-  border-radius:18px;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(8px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.6);
-  animation:fadeIn 0.6s ease;
 }
 
-img.logo{
-  width:90px;
-  height:90px;
-  border-radius:18px;
-  margin-bottom:15px;
-  box-shadow:0 0 15px rgba(255,255,255,0.3);
+.logo{
+  width:110px;
+  height:110px;
+  border-radius:25px;
+  margin-bottom:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
 h1{
-  font-size:22px;
-  margin-bottom:25px;
+  font-size:42px;
+  font-weight:800;
+  background:linear-gradient(90deg,#cfd9ff,#ffffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:20px;
 }
 
-.btn{
-  display:block;
+.subtitle{
+  font-size:18px;
+  color:#b0b8d1;
+  margin-bottom:50px;
+  line-height:1.6;
+}
+
+.install-btn{
   width:100%;
-  padding:14px;
-  margin:12px 0;
-  font-size:16px;
-  font-weight:bold;
-  border-radius:12px;
+  padding:20px;
+  margin:15px 0;
   border:none;
+  border-radius:50px;
+  font-size:20px;
+  font-weight:600;
   cursor:pointer;
-  transition:all 0.25s ease;
+  color:#fff;
+  transition:0.3s;
+  background:linear-gradient(90deg,#4f8cff,#9c5cff);
+  box-shadow:0 10px 25px rgba(79,140,255,0.4);
 }
 
-.next-btn{
-  background:#0ea5ff;
-  color:#001217;
-}
-
-.delta-btn{
-  background:#020617;
-  color:#e6f2ff;
-  border:2px solid #0ea5ff;
-}
-
-.btn:hover{
+.install-btn:hover{
   transform:scale(1.05);
-  box-shadow:0 6px 15px rgba(0,0,0,0.5);
-}
-
-.hidden{
-  display:none;
-}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(15px);}
-  to{opacity:1; transform:translateY(0);}
+  box-shadow:0 15px 35px rgba(156,92,255,0.6);
 }
 </style>
 </head>
@@ -97,49 +83,32 @@ h1{
 
 <div class="container">
 
-  <!-- الصفحة الأولى -->
-  <div id="welcomePage">
-    <img src="https://delta.bz/Icon.jpg" class="logo">
-    <h1>مرحباً فيك في موقع Delta Hub</h1>
-    <button class="btn next-btn" onclick="showMenu()">التالي</button>
-  </div>
+<img src="https://delta.bz/Icon.jpg" class="logo">
 
-  <!-- صفحة الخيارات -->
-  <div id="deltaMenu" class="hidden">
-    <button class="btn delta-btn"
-      onclick="goLink('itms-services://?action=download-manifest&url=https://delta.bz/manifest.plist')">
-      Delta 1
-    </button>
+<h1>Delta Hub</h1>
 
-    <button class="btn delta-btn"
-      onclick="goLink('itms-services://?action=download-manifest&url=https://deltaexecutor.filesadda.com/manifest(delta-executor.com).plist')">
-      Delta 2
-    </button>
-  </div>
+<div class="subtitle">
+Experience the most advanced Roblox executor for iOS.<br>
+Secure, fast, and no computer required.
+</div>
+
+<button class="install-btn"
+onclick="window.location.href='itms-services://?action=download-manifest&url=https://delta.bz/manifest.plist'">
+Direct Install
+</button>
+
+<button class="install-btn"
+onclick="window.location.href='itms-services://?action=download-manifest&url=https://deltaexecutor.filesadda.com/manifest(delta-executor.com).plist'">
+Direct Install 2
+</button>
 
 </div>
 
 <script>
-function showMenu(){
-  document.getElementById("welcomePage").classList.add("hidden");
-  document.getElementById("deltaMenu").classList.remove("hidden");
-}
-
-function goLink(url){
-  window.location.href = url;
-}
-
-/* منع فتح أدوات المطور */
-document.addEventListener("keydown", function(e){
-  if(e.key === "F12"){
-    e.preventDefault();
-  }
-  if(e.ctrlKey && e.shiftKey && e.key === "I"){
-    e.preventDefault();
-  }
-  if(e.ctrlKey && e.key === "u"){
-    e.preventDefault();
-  }
+document.addEventListener("keydown",function(e){
+ if(e.key==="F12"){e.preventDefault();}
+ if(e.ctrlKey&&e.shiftKey&&e.key==="I"){e.preventDefault();}
+ if(e.ctrlKey&&e.key==="u"){e.preventDefault();}
 });
 </script>
 
